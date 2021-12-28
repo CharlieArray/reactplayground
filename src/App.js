@@ -1,19 +1,24 @@
-import './App.css';
-import Time from './Components/Time'
+import "./App.css";
+import React from "react";
+import Time from "./Components/Time";
 
-function App() {
-  let name = "Charlie"
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>React Sandbox</h1>
-        <Time 
-        name = {name}
-        />
-      </header>
-    </div>
-  );
+    this.state = {
+      name: "Charlie",
+    };
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <h1>React Sandbox</h1>
+          <Time name={this.state.name} />
+        </header>
+      </div>
+    );
+  }
 }
-
-export default App;
